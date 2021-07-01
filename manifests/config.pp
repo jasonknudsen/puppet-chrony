@@ -60,4 +60,8 @@ class chrony::config (
     mode    => $config_keys_mode,
     content => Sensitive(epp($config_keys_template)),
   }
+
+  file { '/var/run/chrony':
+    ensure => directory,
+  }
 }
